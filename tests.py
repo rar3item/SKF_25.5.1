@@ -10,8 +10,8 @@ driver.implicitly_wait(10)
 @pytest.fixture(autouse=True)
 def testing():
    driver.get('http://petfriends.skillfactory.ru/login')
-   driver.find_element(By.ID, 'email').send_keys('und3rgrnd@gmail.com')
-   driver.find_element(By.ID, 'pass').send_keys('shithappens')
+   driver.find_element(By.ID, 'email').send_keys('login')
+   driver.find_element(By.ID, 'pass').send_keys('pass')
    driver.find_element(By.CSS_SELECTOR, 'button[type="submit"]').click()
    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//button[text()='Выйти']")))
 
